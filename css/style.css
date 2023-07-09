@@ -1,0 +1,211 @@
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Softblue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --VerydarkblueMain: hsl(217, 54%, 11%);
+  --VerydarkblueCard: hsl(216, 50%, 16%);
+  --VerydarkblueLine: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--VerydarkblueMain);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.6em;
+  width: 280px;
+  max-width: 500px;
+  background-color: var(--VerydarkblueCard);
+  border-radius: 15px;
+}
+.card__first-object {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  cursor: pointer;
+}
+.card__top-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.card__view-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  opacity: 0;
+  z-index: 2;
+}
+.card__first-object:hover .card__view-img {
+  opacity: 1;
+}
+.card__shadow-object {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(178, 100%, 50%, 0.384);
+  border-radius: 15px;
+  transition: transform 0.3s;
+  transform: scale(0);
+}
+.card__first-object:hover .card__shadow-object {
+  transform: scale(1);
+}
+.card__title-box button {
+  padding: 1em 0 0.4em 0;
+  background: none;
+  color: var(--White);
+  border: none;
+  font-size: 2rem;
+  text-align: left;
+  cursor: pointer;
+}
+.card__title-box p {
+  color: var(--Softblue);
+  font-size: 1.4rem;
+}
+.card__eth {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+  width: 100%;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+.card__eth span {
+  display: flex;
+  align-items: center;
+}
+.card__eth img {
+  margin-right: 0.6em;
+}
+.card__eth-money {
+  color: var(--Cyan);
+}
+.card__eth-days {
+  color: var(--Softblue);
+}
+.card hr {
+  margin: 0.4em 0;
+  width: 100%;
+  border: 1px solid var(--VerydarkblueLine);
+}
+.card__person {
+  display: flex;
+  align-items: center;
+  padding-top: 1em;
+  width: 100%;
+  font-size: 1.2rem;
+}
+.card__person img {
+  margin-right: 1em;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--White);
+  border-radius: 50%;
+}
+.card__person p {
+  margin-right: 0.4em;
+  color: var(--Softblue);
+}
+.card__person a {
+  color: var(--White);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 375px) {
+  .card {
+    width: auto;
+    max-width: 375px;
+  }
+  .card__first-object {
+    width: 320px;
+    height: 320px;
+  }
+  .card__title-box button {
+    font-size: 2.6rem;
+  }
+  .card__title-box p {
+    font-size: 2rem;
+  }
+  .card__eth {
+    margin: 1.4em 0;
+    font-size: 1.8rem;
+  }
+  .card__eth img {
+    transform: scale(1.2);
+  }
+  .card__person {
+    font-size: 1.8rem;
+  }
+  .card__person img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .card {
+    max-width: 500px;
+  }
+  .card__first-object {
+    width: 450px;
+    height: 450px;
+  }
+  .card__title-box button {
+    margin-bottom: 0.4em;
+    font-size: 3rem;
+    transition: color 0.3s;
+  }
+  .card__title-box button:hover {
+    color: var(--Cyan);
+  }
+  .card__title-box p {
+    font-size: 2.4rem;
+  }
+  .card__eth {
+    padding: 0;
+    margin: 1.2em 0;
+    font-size: 2.4rem;
+  }
+  .card__eth img {
+    transform: scale(1.2);
+  }
+  .card__person {
+    font-size: 2.2rem;
+  }
+  .card__person img {
+    width: 50px;
+    height: 50px;
+  }
+  .card__person a {
+    transition: color 0.3s;
+  }
+  .card__person a:hover {
+    color: var(--Cyan);
+  }
+}/*# sourceMappingURL=style.css.map */
